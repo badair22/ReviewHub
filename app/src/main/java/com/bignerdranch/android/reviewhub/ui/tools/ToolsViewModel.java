@@ -1,3 +1,4 @@
+/*
 package com.bignerdranch.android.reviewhub.ui.tools;
 
 import androidx.lifecycle.LiveData;
@@ -16,4 +17,4 @@ public class ToolsViewModel extends ViewModel {
     public LiveData<String> getText() {
         return mText;
     }
-}
+}*/

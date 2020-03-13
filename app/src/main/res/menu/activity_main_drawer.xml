@@ -13,10 +13,6 @@
 
         android:title="@string/menu_account" />
 
-        <item
-            android:id="@+id/nav_addNew"
-
-            android:title="@string/menu_new" />
     </group>
 
 </menu>
