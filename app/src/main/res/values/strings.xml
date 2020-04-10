@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">ReviewHub</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="enter_restaurant_label">Enter Restaurant Name</string>
+    <string name="enter_item_name">Enter the items name</string>
+    <string name="enter_item_price">Enter the items price</string>
+    <string name="enter_summary">Summary</string>
+    <string name="enter_rating">Rating</string>
+    <string name="enter_state">State</string>
+    <string name="enter_city">City</string>
+    <string name="item_type">Enter the type of item</string>
+    <string name="first_name_label">First Name</string>
+    <string name="last_name_label">Last Name</string>
+    <string name="username_label">Username</string>
+    <string name="email_label">Email</string>
+    <string name="text_home">Testing</string>
+    <string name="test_restaurant_name">Olive Garden</string>
+    <string name="test_restaurant">"Restaurant Name: Olive Garden\nRating: 5"</string>
+    <string name="test_rating">5</string>
+    <string name="add_item_button">Add New Item</string>
+
+    <string name="menu_home">Review Hub</string>
+    <string name="home">Home</string>
+    <string name="menu_account">Account</string>
+    <string name="menu_new">Add New Review</string>
+    <string name="menu_item">Add Item</string>
+    <string name="rating_hint">1 - 10</string>
+</resources>

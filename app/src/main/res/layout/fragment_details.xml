@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/create_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Name"/>
+        <EditText
+            android:id="@+id/item_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_restaurant_name"/>
+
+        <TextView
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Restaurant Rating"/>
+        <EditText
+            android:id="@+id/item_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/test_rating"/>
+
+        <Button
+            android:id="@+id/add_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="itemActivity"
+            android:text="@string/add_item_button" />
+
+        <Button
+            android:id="@+id/update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goHome"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/go_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="goHome"
+            android:text="Cancel" />
+    </LinearLayout>
+</FrameLayout>
