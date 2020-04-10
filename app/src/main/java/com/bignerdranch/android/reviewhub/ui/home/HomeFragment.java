@@ -25,6 +25,7 @@ import com.bignerdranch.android.reviewhub.ItemActivity;
 import com.bignerdranch.android.reviewhub.MainActivity;
 import com.bignerdranch.android.reviewhub.R;
 import com.bignerdranch.android.reviewhub.ToolsActivity;
+import com.bignerdranch.android.reviewhub.ui.details.Details;
 import com.bignerdranch.android.reviewhub.ui.item.Item;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
 
@@ -32,15 +33,20 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private Review mReview;
+    private Details mDetails;
     private TextView mTitleTextView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mReview = new Review();
+        mDetails = new Details();
+        updateUI();
     }
 
+    private void updateUI() {
+        Home home = Home.get(getActivity());
+        List<Details> details = home.getDetails();
 
+    }
 
 /*    private void updateUI() {
         Review reviewTest = Review.get(getActivity());
@@ -54,7 +60,11 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+        Details details = new Details();
+        details.setItemName("Restaurant Name: Olive Garden");
+        details.setItemRating("Rating: 5");
             mTitleTextView = (TextView) v.findViewById(R.id.restaurant_name);
+            mTitleTextView.setText(details.getItemName() +" \n"+ details.getPrice());
             mTitleTextView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
@@ -66,6 +76,13 @@ public class HomeFragment extends Fragment {
 
             return v;
         }
+    public void bind(Details details) {
+        mDetails = details;
+        mTitleTextView.setText(mDetails.getItemName());
+    }
+
+
+
 
         /*public void bind(Review review) {
             mReview = review;

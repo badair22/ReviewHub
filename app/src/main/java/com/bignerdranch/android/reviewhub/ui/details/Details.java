@@ -4,8 +4,8 @@ import java.util.UUID;
 
 public class Details {
     public UUID mId;
-    public String mItemName;
-    public String mItemRating;
+    public String mName;
+    public String mRating;
 
 
     public UUID getId() {
@@ -13,19 +13,19 @@ public class Details {
     }
 
     public String getItemName() {
-        return mItemName;
+        return mName;
     }
 
     public void setItemName(String name) {
-        mItemName = name;
+        mName = name;
     }
 
     public String getPrice() {
-        return mItemRating;
+        return mRating;
     }
 
     public void setItemRating(String rating) {
-        mItemRating = rating;
+        mRating = rating;
     }
 
 }

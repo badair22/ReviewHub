@@ -17,19 +17,17 @@
         <EditText
             android:id="@+id/item_name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/test_restaurant_name"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             style="?android:listSeparatorTextViewStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Restaurant Rating"/>
+            android:text="Rating"/>
         <EditText
             android:id="@+id/item_rating"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/test_rating"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/add_item"

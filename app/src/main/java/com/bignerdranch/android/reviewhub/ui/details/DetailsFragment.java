@@ -16,7 +16,10 @@ import androidx.fragment.app.Fragment;
 import com.bignerdranch.android.reviewhub.ItemActivity;
 import com.bignerdranch.android.reviewhub.R;
 import com.bignerdranch.android.reviewhub.Restaurants;
+import com.bignerdranch.android.reviewhub.ui.home.Home;
 import com.bignerdranch.android.reviewhub.ui.item.Item;
+
+import java.util.List;
 
 public class DetailsFragment extends Fragment {
     private EditText mItemName;
@@ -30,14 +33,22 @@ public class DetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mDetails = new Details();
+        updateUI();
     }
 
+    private void updateUI() {
+        Home home = Home.get(getActivity());
+        List<Details> details = home.getDetails();
+
+    }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_details, container, false);
-
+        Details details = new Details();
+        mDetails.setItemName("Olive Garden");
         mItemName = (EditText) v.findViewById(R.id.item_name);
+
         mItemName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -46,7 +57,7 @@ public class DetailsFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mDetails.setItemName(s.toString());
+                mItemName.setText(mDetails.getItemName());
             }
 
             @Override
@@ -54,8 +65,9 @@ public class DetailsFragment extends Fragment {
 
             }
         });
-
+        mDetails.setItemRating("5");
         mItemRating = (EditText) v.findViewById(R.id.item_rating);
+        mItemRating.setText(mDetails.getPrice());
         mItemRating.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
