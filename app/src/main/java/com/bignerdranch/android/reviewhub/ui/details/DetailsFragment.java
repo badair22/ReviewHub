@@ -9,47 +9,56 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bignerdranch.android.reviewhub.DetailsActivity;
+import com.bignerdranch.android.reviewhub.HomeActivity;
 import com.bignerdranch.android.reviewhub.ItemActivity;
 import com.bignerdranch.android.reviewhub.R;
 import com.bignerdranch.android.reviewhub.Restaurants;
 import com.bignerdranch.android.reviewhub.ui.home.Home;
 import com.bignerdranch.android.reviewhub.ui.item.Item;
+import com.bignerdranch.android.reviewhub.ui.review.Review;
 
 import java.util.List;
 
 public class DetailsFragment extends Fragment {
-    private EditText mItemName;
-    private EditText mItemRating;
+    private TextView mItemName;
+    private TextView mItemRating;
     private Button mAddItemButton;
     private Button mHomeButton;
     private Button mUpdateButton;
-    private Details mDetails;
+    //private Details mDetails;
+    private Review mReview;
+    String name;
+    String rating;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDetails = new Details();
+        //mReview = new Review();
         updateUI();
     }
 
     private void updateUI() {
-        Home home = Home.get(getActivity());
-        List<Details> details = home.getDetails();
+        /*Home home = Home.get(getActivity());
+        List<Review> reviews = Home.getReviews();*/
 
     }
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_details, container, false);
-        Details details = new Details();
-        mDetails.setItemName("Olive Garden");
-        mItemName = (EditText) v.findViewById(R.id.item_name);
+        //final Review review = new Review(name, rating);
+        //details.setItemName("Restaurant Name: Olive Garden");
+        //details.setItemRating("Rating: 5");
+        mItemName = (TextView) v.findViewById(R.id.item_name);
+        mItemName.setText("Test");
 
-        mItemName.addTextChangedListener(new TextWatcher() {
+        /*mItemName.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -57,36 +66,50 @@ public class DetailsFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mItemName.setText(mDetails.getItemName());
+                mItemName.setText("Olive Garden");
             }
 
             @Override
             public void afterTextChanged(Editable s) {
 
-            }
-        });
-        mDetails.setItemRating("5");
-        mItemRating = (EditText) v.findViewById(R.id.item_rating);
-        mItemRating.setText(mDetails.getPrice());
-        mItemRating.addTextChangedListener(new TextWatcher() {
-            @Override
+            }*/
+
+
+        mItemRating = (TextView) v.findViewById(R.id.item_rating);
+        //mItemRating.setText(mReview.getRating());
+        //mItemRating.addTextChangedListener(new TextWatcher() {
+/*            @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mDetails.setItemRating(s.toString());
+                mReview.setRating(s.toString());
             }
 
             @Override
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
+
         mAddItemButton = (Button) v.findViewById(R.id.add_item);
+        /*mAddItemButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                String name = details.getItemName();
+                String rating = mReview.getRating();
+                intent.putExtra("name", name);
+                intent.putExtra("rating", rating);
+                startActivity(intent);
+            }
+        });*/
+
         mHomeButton = (Button) v.findViewById(R.id.go_home);
-        mUpdateButton = (Button) v.findViewById(R.id.update);
+
+        //mUpdateButton = (Button) v.findViewById(R.id.update);
         return v;
     }
 }

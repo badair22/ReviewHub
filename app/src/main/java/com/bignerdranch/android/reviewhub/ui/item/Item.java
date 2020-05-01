@@ -3,17 +3,20 @@ package com.bignerdranch.android.reviewhub.ui.item;
 import java.util.UUID;
 
 public class Item {
-    public UUID mId;
     public String mItemName;
     public String mItemType;
     public String mPrice;
     public String mSummary;
     public String mRating;
 
-
-    public UUID getId() {
-        return mId;
+    public Item(String name, String type, String price, String summary, String rating) {
+        this.mItemName = name;
+        this.mRating = rating;
+        this.mItemType = type;
+        this.mPrice = price;
+        this.mSummary = summary;
     }
+
 
     public String getItemName() {
         return mItemName;

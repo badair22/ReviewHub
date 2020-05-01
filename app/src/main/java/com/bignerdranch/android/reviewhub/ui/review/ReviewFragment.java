@@ -14,7 +14,11 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bignerdranch.android.reviewhub.DatabaseHelper;
 import com.bignerdranch.android.reviewhub.R;
+import com.bignerdranch.android.reviewhub.ui.home.Home;
+
+import static android.app.Activity.RESULT_OK;
 
 public class ReviewFragment extends Fragment {
 
@@ -30,7 +34,7 @@ public class ReviewFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mReview = new Review();
+        //mReview = new Review();
     }
 
     @Nullable
@@ -47,7 +51,7 @@ public class ReviewFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mReview.setTitle(s.toString());
+                mReview.setName(s.toString());
             }
 
             @Override
@@ -65,7 +69,7 @@ public class ReviewFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mReview.setItem(s.toString());
+                mReview.setState(s.toString());
             }
 
             @Override
@@ -83,7 +87,7 @@ public class ReviewFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mReview.setPrice(s.toString());
+                mReview.setCity(s.toString());
             }
 
             @Override
@@ -119,7 +123,7 @@ public class ReviewFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mReview.setRating(s.toString());
+                mReview.setRating(Long.parseLong(s.toString()));
             }
 
             @Override
@@ -128,11 +132,19 @@ public class ReviewFragment extends Fragment {
             }
         });
 
-        mSaveButton = (Button) v.findViewById(R.id.submit_review);
-        mSaveButton.setEnabled(true);
+        /*mSaveButton.setOnClickListener( {
+            setResult(RESULT_OK, null);
+            Review review = new Review();
+            review.setTitle(mRestaurant.getText().toString());
+            review.setRating(mRating.getText().toString());
+        Home.get(getContext()).newReview(review);
+        mRestaurant.setText("");
+        mRating.setText("");
+        });*/
+/*        mSaveButton = (Button) v.findViewById(R.id.submit_review);
+        mSaveButton.setEnabled(true);*/
 
         mCancelButton = (Button) v.findViewById(R.id.cancel_review);
-        mCancelButton.setEnabled(true);
 
         return v;
     }

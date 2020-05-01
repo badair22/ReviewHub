@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,23 +30,30 @@ import com.bignerdranch.android.reviewhub.ToolsActivity;
 import com.bignerdranch.android.reviewhub.ui.details.Details;
 import com.bignerdranch.android.reviewhub.ui.item.Item;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private Details mDetails;
-    private TextView mTitleTextView;
+    //private Review mReviews;
+        public TextView mTitleTextView;
+        public TextView mRating;
+        public LinearLayout mMove;
+        public Review review;
+
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDetails = new Details();
+        //mReviews = new Review();
         updateUI();
     }
 
     private void updateUI() {
         Home home = Home.get(getActivity());
-        List<Details> details = home.getDetails();
+        List<Review> reviews = home.getReviews();
 
     }
 
@@ -59,27 +68,30 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
-        Details details = new Details();
+        View v = inflater.inflate(R.layout.restaurant_list, container, false);
+/*        Details details = new Details();
         details.setItemName("Restaurant Name: Olive Garden");
-        details.setItemRating("Rating: 5");
-            mTitleTextView = (TextView) v.findViewById(R.id.restaurant_name);
-            mTitleTextView.setText(details.getItemName() +" \n"+ details.getPrice());
-            mTitleTextView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                    startActivity(intent);
-                }
+        details.setItemRating("Rating: 5");*/
+
+            //mTitleTextView.setText(details.getItemName() +" \n"+ details.getPrice());
+        mTitleTextView = (TextView) v.findViewById(R.id.show_name);
+        mMove = (LinearLayout) v.findViewById(R.id.add_new_item);
+        mMove.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                intent.putExtra("name", mTitleTextView.getText());
+                startActivity(intent);
+            }
         });
            // mRating = (TextView) v.findViewById(R.id.rating_number);
 
             return v;
         }
-    public void bind(Details details) {
-        mDetails = details;
-        mTitleTextView.setText(mDetails.getItemName());
-    }
+/*    public void bind(Review reviews) {
+        mReviews = reviews;
+        mTitleTextView.setText(mReviews.getTitle());
+    }*/
 
 
 

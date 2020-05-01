@@ -2,6 +2,7 @@ package com.bignerdranch.android.reviewhub.ui.tools;
 
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bignerdranch.android.reviewhub.R;
 
@@ -25,8 +27,11 @@ public class ToolsFragment extends Fragment {
     private EditText mEmail;
     private EditText mUsername;
     private Account mAccount;
+    private Layout test;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         mAccount = new Account();
     }

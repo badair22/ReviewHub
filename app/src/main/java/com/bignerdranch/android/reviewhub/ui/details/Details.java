@@ -3,13 +3,13 @@ package com.bignerdranch.android.reviewhub.ui.details;
 import java.util.UUID;
 
 public class Details {
-    public UUID mId;
     public String mName;
     public String mRating;
 
 
-    public UUID getId() {
-        return mId;
+    public Details(String name, String rating) {
+        this.mName = name;
+        this.mRating = rating;
     }
 
     public String getItemName() {

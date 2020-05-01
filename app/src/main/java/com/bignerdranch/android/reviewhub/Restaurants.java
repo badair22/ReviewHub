@@ -3,12 +3,10 @@ package com.bignerdranch.android.reviewhub;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.bignerdranch.android.reviewhub.database.ReviewBaseHelper;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Restaurants {
     private static Restaurants sRestaurants;
@@ -18,7 +16,6 @@ public class Restaurants {
 
     private Restaurants(Context context) {
         mContext = context.getApplicationContext();
-        mDatabase = new ReviewBaseHelper(mContext).getWritableDatabase();
         mReviews = new ArrayList<>();
     }
 

@@ -1,8 +1,10 @@
 package com.bignerdranch.android.reviewhub.ui.item;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +14,12 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bignerdranch.android.reviewhub.DetailsActivity;
+import com.bignerdranch.android.reviewhub.HomeActivity;
 import com.bignerdranch.android.reviewhub.R;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
+
+import java.io.Console;
 
 public class ItemFragment extends Fragment {
     private EditText mItemName;
@@ -28,7 +34,7 @@ public class ItemFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mItem = new Item();
+        //mItem = new Item();
     }
 
     @Nullable
@@ -90,7 +96,7 @@ public class ItemFragment extends Fragment {
             }
         });
 
-        mSummary = (EditText) v.findViewById(R.id.summary);
+        mSummary = (EditText) v.findViewById(R.id.item_summary);
         mSummary.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -108,7 +114,7 @@ public class ItemFragment extends Fragment {
             }
         });
 
-        mRating = (EditText) v.findViewById(R.id.rating);
+        mRating = (EditText) v.findViewById(R.id.item_rating);
         mRating.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -127,10 +133,25 @@ public class ItemFragment extends Fragment {
         });
 
         mSaveButton = (Button) v.findViewById(R.id.submit_item);
+        /*mSaveButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DetailsActivity.class);
+                String name = mItem.getItemName();
+                String rating = mItem.getRating();
+                intent.putExtra("name", name);
+                intent.putExtra("rating", rating);
+                startActivity(intent);
+                if (mItem.mItemName != null) {
+                    Log.d("print", "it is not null");
+                }
+            }
+        });*/
         mSaveButton.setEnabled(true);
 
+
         mCancelButton = (Button) v.findViewById(R.id.cancel_item);
-        mCancelButton.setEnabled(false);
+        mCancelButton.setEnabled(true);
 
         return v;
     }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1032454810791",
+    "firebase_url": "https://wallet-hub-f886b.firebaseio.com",
+    "project_id": "wallet-hub-f886b",
+    "storage_bucket": "wallet-hub-f886b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032454810791:android:479ca826284880438aff82",
+        "android_client_info": {
+          "package_name": "com.bignerdranch.android.reviewhub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032454810791-d3o7kdecttpptkn2o440lo3bha92760i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bignerdranch.android.reviewhub",
+            "certificate_hash": "9a3a6f6f4181fe88f044573af831e04767779e52"
+          }
+        },
+        {
+          "client_id": "1032454810791-oar5ppi58dkpqee8dnlme32d7e9uhsli.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpgiwKF_-LUuL91QEZsJj04i0tzJ86Eug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032454810791-oar5ppi58dkpqee8dnlme32d7e9uhsli.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

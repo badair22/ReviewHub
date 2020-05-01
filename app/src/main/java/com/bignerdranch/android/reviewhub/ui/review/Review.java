@@ -4,55 +4,63 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Review {
-    public UUID mId;
-    public String mTitle;
-    public String mItem;
-    public String mPrice;
+    public String mName;
+    public String mState;
+    public String mCity;
     public String mSummary;
-    public String mRating;
+    public Long mRating;
 
-
-    public UUID getId() {
-        return mId;
+    public Review(){}
+    public Review(String name, Long rating/*, String state, String city, String summary*/) {
+        this.mName = name;
+        this.mRating = rating;
+        /*this.mState = state;
+        this.mCity = city;
+        this.mSummary = summary;*/
     }
 
-    public String getTitle() {
-        return mTitle;
+    public String getName() {
+        return mName;
     }
 
-    public void setTitle(String title) {
-        mTitle = title;
+    public void setName(String name) {
+        mName = name;
     }
 
-    public String getPrice() {
-        return mPrice;
+    public String getState() {
+        return mState;
     }
 
-    public void setPrice(String price) {
-        mPrice = price;
+    public void setState(String state) {
+        mState = state;
+    }
+
+    public String getCity() {
+        return mCity;
+    }
+
+    public void setCity(String city) {
+        mCity = city;
     }
 
     public String getSummary() {
-        return mItem;
+        return mSummary;
     }
 
     public void setSummary(String summary) {
         mSummary = summary;
     }
 
-    public String getItem() {
-        return mItem;
-    }
-
-    public void setItem(String item) {
-        mItem = item;
-    }
-
-    public String getRating() {
+    public Long getRating() {
         return mRating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Long rating) {
         mRating = rating;
     }
+
+
+
+
+
 }
