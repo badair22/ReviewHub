@@ -3,6 +3,7 @@ package com.bignerdranch.android.reviewhub;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.bignerdranch.android.reviewhub.ui.home.HomeFragment;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,6 +27,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -70,12 +72,19 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ToolsActivity.class));
             }
         });
+        Button allButton = findViewById(R.id.all_button);
+        allButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, DetailsActivity.class));
+            }
+        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home,
-                R.id.nav_tools)
+                R.id.nav_home
+                /*R.id.nav_tools*/)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -100,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-
         mFirebaseAdapter.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
             @Override
             public void onItemRangeInserted(int positionStart, int itemCount) {
@@ -116,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mRecyclerView.setAdapter(mFirebaseAdapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

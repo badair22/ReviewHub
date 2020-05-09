@@ -22,6 +22,7 @@ import com.bignerdranch.android.reviewhub.R;
 
 public class ToolsFragment extends Fragment {
     private Button mUpdateButton;
+    private Button hideButton;
     private EditText mFirst;
     private EditText mLast;
     private EditText mEmail;
@@ -112,7 +113,8 @@ public class ToolsFragment extends Fragment {
 
             }
         });
-
+/*        hideButton = (Button) v.findViewById(R.id.all_button);
+        hideButton.setVisibility(v.GONE);*/
         mUpdateButton = (Button) v.findViewById(R.id.update_account);
         mUpdateButton.setEnabled(false);
 

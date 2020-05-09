@@ -9,6 +9,7 @@ import com.bignerdranch.android.reviewhub.ui.review.ReviewFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import androidx.fragment.app.Fragment;
@@ -31,6 +32,7 @@ import android.view.Menu;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ToolsActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
@@ -51,9 +53,16 @@ public class ToolsActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Review review = new Review(name.getText().toString(), Long.parseLong(rating.getText().toString())/*, state.getText().toString(), city.getText().toString(), summary.getText().toString()*/);
-            mDatabaseReference.child("reviews").push().setValue(review);
-            finish();
+            if(!TextUtils.isEmpty(name.getText().toString()) && !TextUtils.isEmpty(rating.getText().toString())) {
+                Review review = new Review(name.getText().toString(), Long.parseLong(rating.getText().toString())/*, state.getText().toString(), city.getText().toString(), summary.getText().toString()*/);
+                mDatabaseReference.child("reviews").push().setValue(review);
+                finish();
+            }
+
+            else {
+                name.setError("Enter a name");
+                rating.setError("Enter a rating");
+            }
         }
         });
         this.createFragment();

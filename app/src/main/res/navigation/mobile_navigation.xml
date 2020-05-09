@@ -11,16 +11,16 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+<!--    <fragment
         android:id="@+id/nav_tools"
         android:name="com.bignerdranch.android.reviewhub.ui.tools.ToolsFragment"
         android:label="@string/menu_account"
-        tools:layout="@layout/fragment_tools" />
+        tools:layout="@layout/fragment_tools" />-->
 
-    <fragment
+<!--    <fragment
         android:id="@+id/nav_item"
-        android:name="com.bignerdranch.android.reviewhub.ui.item.ItemFragment"
-        android:label="@string/menu_item"
-        tools:layout="@layout/fragment_item" />
+        android:name="com.bignerdranch.android.reviewhub.ui.details.DetailsFragment"
+        android:label="All items"
+        tools:layout="@layout/fragment_details" />-->
 
 </navigation>

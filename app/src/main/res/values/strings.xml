@@ -23,6 +23,7 @@
     <string name="test_restaurant">"Restaurant Name: Olive Garden\nRating: 5"</string>
     <string name="test_rating">5</string>
     <string name="add_item_button">Add New Item</string>
+    <string name="bold_name"><b>Restaurant</b></string>
 
     <string name="menu_home">Review Hub</string>
     <string name="home">Home</string>

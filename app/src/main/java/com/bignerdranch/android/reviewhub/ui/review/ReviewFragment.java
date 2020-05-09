@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -123,7 +124,8 @@ public class ReviewFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mReview.setRating(Long.parseLong(s.toString()));
+                    mReview.setRating(Long.parseLong(s.toString()));
+
             }
 
             @Override

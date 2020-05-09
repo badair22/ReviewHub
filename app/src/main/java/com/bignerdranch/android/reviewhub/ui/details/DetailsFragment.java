@@ -55,8 +55,8 @@ public class DetailsFragment extends Fragment {
         //final Review review = new Review(name, rating);
         //details.setItemName("Restaurant Name: Olive Garden");
         //details.setItemRating("Rating: 5");
-        mItemName = (TextView) v.findViewById(R.id.item_name);
-        mItemName.setText("Test");
+        //mItemName = (TextView) v.findViewById(R.id.item_name);
+        //mItemName.setText("Test");
 
         /*mItemName.addTextChangedListener(new TextWatcher() {
             @Override

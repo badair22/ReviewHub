@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".DetailsActivity"
-            android:label="Restaurant Details">
+            android:label="All Items">
         </activity>
     </application>
 

@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bignerdranch.android.reviewhub.DetailsActivity;
 import com.bignerdranch.android.reviewhub.HomeActivity;
+import com.bignerdranch.android.reviewhub.MainActivity;
 import com.bignerdranch.android.reviewhub.R;
 import com.bignerdranch.android.reviewhub.ui.review.Review;
 
@@ -60,7 +61,7 @@ public class ItemFragment extends Fragment {
             }
         });
 
-        mItemType = (EditText) v.findViewById(R.id.item_price);
+        mItemType = (EditText) v.findViewById(R.id.item_type );
         mItemType.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -87,7 +88,7 @@ public class ItemFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mItem.setPrice(s.toString());
+                mItem.setPrice(Long.parseLong(s.toString()));
             }
 
             @Override
@@ -123,7 +124,7 @@ public class ItemFragment extends Fragment {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                mItem.setRating(s.toString());
+                mItem.setRating(Long.parseLong(s.toString()));
             }
 
             @Override
@@ -152,6 +153,7 @@ public class ItemFragment extends Fragment {
 
         mCancelButton = (Button) v.findViewById(R.id.cancel_item);
         mCancelButton.setEnabled(true);
+
 
         return v;
     }

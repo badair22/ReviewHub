@@ -5,16 +5,17 @@ import java.util.UUID;
 public class Item {
     public String mItemName;
     public String mItemType;
-    public String mPrice;
+    public Long mPrice;
     public String mSummary;
-    public String mRating;
+    public Long mRating;
 
-    public Item(String name, String type, String price, String summary, String rating) {
-        this.mItemName = name;
+    public Item(){}
+    public Item(String itemName, String itemType, Long price, /*String summary,*/ Long rating) {
+        this.mItemName = itemName;
+        this.mItemType = itemType;
         this.mRating = rating;
-        this.mItemType = type;
         this.mPrice = price;
-        this.mSummary = summary;
+        //this.mSummary = summary;
     }
 
 
@@ -26,11 +27,11 @@ public class Item {
         mItemName = name;
     }
 
-    public String getPrice() {
+    public Long getPrice() {
         return mPrice;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Long price) {
         mPrice = price;
     }
 
@@ -50,11 +51,11 @@ public class Item {
         mItemType = type;
     }
 
-    public String getRating() {
+    public Long getRating() {
         return mRating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Long rating) {
         mRating = rating;
     }
 }

@@ -37,7 +37,7 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     //private Review mReviews;
-        public TextView mTitleTextView;
+        public TextView mName;
         public TextView mRating;
         public LinearLayout mMove;
         public Review review;
@@ -69,24 +69,26 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.restaurant_list, container, false);
-/*        Details details = new Details();
+        /*        Details details = new Details();
         details.setItemName("Restaurant Name: Olive Garden");
         details.setItemRating("Rating: 5");*/
 
             //mTitleTextView.setText(details.getItemName() +" \n"+ details.getPrice());
-        mTitleTextView = (TextView) v.findViewById(R.id.show_name);
+        mName = (TextView) v.findViewById(R.id.show_name);
         mMove = (LinearLayout) v.findViewById(R.id.add_new_item);
-        mMove.setOnClickListener(new View.OnClickListener(){
+        /*mMove.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+                mName = (TextView) view.findViewById(R.id.show_name);
+                String test = mName.getText().toString();
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
-                intent.putExtra("name", mTitleTextView.getText());
+                intent.putExtra("name", mName.getText());
                 startActivity(intent);
             }
-        });
+        });*/
            // mRating = (TextView) v.findViewById(R.id.rating_number);
 
-            return v;
+        return v;
         }
 /*    public void bind(Review reviews) {
         mReviews = reviews;
